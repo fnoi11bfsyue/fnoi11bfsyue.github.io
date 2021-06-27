@@ -1,9 +1,15 @@
 <!DOCTYPE html>
+
 <html>
   <head>
+
+<link rel="stylesheet" type="text/css" href="https://fnoi11bfsyue.github.io/highlight/styles/github-dark.css">
+    <script src="https://fnoi11bfsyue.github.io/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
     <meta charset="utf-8" >
 
-<title>Shirley Fan</title>
+<title>gridea code-highlight | Shirley Fan</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
@@ -18,11 +24,17 @@
 
 
 
-    <meta name="description" content="Shirley&#39;s diary">
-    
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
-    
+    <meta name="description" content="#解决了自带主题simple代码无法显示高亮的问题
+
+##工具
+highlight.js version11.0.0
+DOWNLOAD
+##步骤
+1.下载highlight.js，解压到\static
+2.修改\themes\simple\..." />
+    <meta name="keywords" content="" />
   </head>
+
   <body>
     <div id="app" class="main">
 
@@ -95,42 +107,40 @@
 
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://fnoi11bfsyue.github.io/post/gridea-code-highlight/">
-                  <h2 class="post-title">gridea code-highlight</h2>
-                </a>
-                <div class="post-date">
-                  2021-06-27
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
-            <article class="post-item">
-              <div class="left">
-                <a href="https://fnoi11bfsyue.github.io/post/leetcode1/">
-                  <h2 class="post-title">leetcode01</h2>
-                </a>
-                <div class="post-date">
-                  2021-06-27
-                </div>
-                <div class="post-abstract">
-                  
-                </div>
-              </div>
-              
-            </article>
-          
+          <div class="post-detail">
+            <h2 class="post-title">gridea code-highlight</h2>
+            <div class="post-date">2021-06-27</div>
+            
+            <div class="post-content" v-pre>
+              <p>#解决了自带主题simple代码无法显示高亮的问题<br>
+<img src="https://fnoi11bfsyue.github.io/post-images/1624806408954.png" alt="" loading="lazy"></p>
+<p>##工具<br>
+highlight.js version11.0.0<br>
+<a href="https://highlightjs.org/">DOWNLOAD</a></p>
+<p>##步骤<br>
+1.下载highlight.js，解压到\static<br>
+2.修改\themes\simple\templates\post.ejs，在head中加入如下代码</p>
+<pre><code class="language-JavaScript">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;&lt;%= themeConfig.domain %&gt;/highlight/styles/github-dark.css&quot;&gt;
+&lt;script src=&quot;&lt;%= themeConfig.domain %&gt;/highlight/highlight.pack.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt;
+</code></pre>
 
-          <div class="pagination-container">
-  
-  
-</div>
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://fnoi11bfsyue.github.io/post/leetcode1/">
+                  <h3 class="post-title">
+                    leetcode01
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
 
         </div>
       </div>

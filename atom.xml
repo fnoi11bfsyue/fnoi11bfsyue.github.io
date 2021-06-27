@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fnoi11bfsyue.github.io</id>
     <title>Shirley Fan</title>
-    <updated>2021-06-27T14:58:46.329Z</updated>
+    <updated>2021-06-27T15:28:10.609Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fnoi11bfsyue.github.io"/>
     <link rel="self" href="https://fnoi11bfsyue.github.io/atom.xml"/>
@@ -10,6 +10,26 @@
     <logo>https://fnoi11bfsyue.github.io/images/avatar.png</logo>
     <icon>https://fnoi11bfsyue.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, Shirley Fan</rights>
+    <entry>
+        <title type="html"><![CDATA[gridea code-highlight]]></title>
+        <id>https://fnoi11bfsyue.github.io/post/gridea-code-highlight/</id>
+        <link href="https://fnoi11bfsyue.github.io/post/gridea-code-highlight/">
+        </link>
+        <updated>2021-06-27T14:59:39.000Z</updated>
+        <content type="html"><![CDATA[<p>#解决了自带主题simple代码无法显示高亮的问题<br>
+<img src="https://fnoi11bfsyue.github.io/post-images/1624806408954.png" alt="" loading="lazy"></p>
+<p>##工具<br>
+highlight.js version11.0.0<br>
+<a href="https://highlightjs.org/">DOWNLOAD</a></p>
+<p>##步骤<br>
+1.下载highlight.js，解压到\static<br>
+2.修改\themes\simple\templates\post.ejs，在head中加入如下代码</p>
+<pre><code class="language-JavaScript">&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; href=&quot;&lt;%= themeConfig.domain %&gt;/highlight/styles/github-dark.css&quot;&gt;
+&lt;script src=&quot;&lt;%= themeConfig.domain %&gt;/highlight/highlight.pack.js&quot;&gt;&lt;/script&gt;
+&lt;script&gt;hljs.initHighlightingOnLoad();&lt;/script&gt;
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[leetcode01]]></title>
         <id>https://fnoi11bfsyue.github.io/post/leetcode1/</id>
