@@ -1,0 +1,262 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>test | Gridea</title>
+<link rel="shortcut icon" href="https://fnoi11bfsyue.github.io/favicon.ico?v=1624793631129">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://fnoi11bfsyue.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="test | Gridea - Atom Feed" href="https://fnoi11bfsyue.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="这是一篇测试
+leetcode01 两数之和
+题目描述
+c++中map
+C++中的STL中map用法 12.基本操作函数
+
+
+
+映射
+底层实现
+是否有序
+数值是否可以重复
+能否更改数值
+查询效率
+增删效率
+
+
+
+
+std::map
+红黑树
+..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://fnoi11bfsyue.github.io">
+  <img class="avatar" src="https://fnoi11bfsyue.github.io/images/avatar.png?v=1624793631129" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              test
+            </h2>
+            <div class="post-info">
+              <span>
+                2021-06-27
+              </span>
+              <span>
+                2 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>这是一篇测试</p>
+<h1 id="leetcode01-两数之和">leetcode01 两数之和</h1>
+<p><a href="https://leetcode-cn.com/problems/two-sum/">题目描述</a></p>
+<h2 id="c中map">c++中map</h2>
+<p><a href="https://www.cnblogs.com/fnlingnzb-learner/p/5833051.html">C++中的STL中map用法 12.基本操作函数</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">映射</th>
+<th style="text-align:left">底层实现</th>
+<th style="text-align:left">是否有序</th>
+<th style="text-align:left">数值是否可以重复</th>
+<th style="text-align:left">能否更改数值</th>
+<th style="text-align:left">查询效率</th>
+<th style="text-align:left">增删效率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">std::map</td>
+<td style="text-align:left">红黑树</td>
+<td style="text-align:left">key有序</td>
+<td style="text-align:left">key不可重复</td>
+<td style="text-align:left">key不可修改</td>
+<td style="text-align:left">O(logn)</td>
+<td style="text-align:left">O(logn)</td>
+</tr>
+<tr>
+<td style="text-align:left">std::multimap</td>
+<td style="text-align:left">红黑树</td>
+<td style="text-align:left">key有序</td>
+<td style="text-align:left">key可重复</td>
+<td style="text-align:left">key不可修改</td>
+<td style="text-align:left">O(logn)</td>
+<td style="text-align:left">O(logn)</td>
+</tr>
+<tr>
+<td style="text-align:left">std::unordered_map</td>
+<td style="text-align:left">哈希表</td>
+<td style="text-align:left">key无序</td>
+<td style="text-align:left">key不可重复</td>
+<td style="text-align:left">key不可修改</td>
+<td style="text-align:left">O(1)</td>
+<td style="text-align:left">O(1)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="c中vector">c++中vector</h2>
+<p><a href="vector%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95">vector的使用方法</a></p>
+<h2 id="hashmap代码">hashmap代码</h2>
+<pre><code class="language-c++">class Solution {
+public:
+    vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) {
+        vector&lt;int&gt; answer;
+        map&lt;int,int&gt; hash;
+        for(int i=0; i&lt;nums.size(); ++i)hash[nums[i]]=i;//添加maphash.value
+        for(int i=0; i&lt;nums.size(); ++i){
+            //if((hash.count(target-nums[i]))!=0 &amp;&amp; (nums[i]*2!=target))//input[3,3] 6, output[0,1]
+            if((hash.count(target-nums[i]))!=0 &amp;&amp; (i!=hash[target-nums[i]])){//count查找maphash.key是否存在，存在返回1，否则返回0
+                answer.push_back(i);//vector后加一个元素
+                answer.push_back(hash[target-nums[i]]);
+                break;
+            }
+        }
+        return answer;
+    }
+};
+</code></pre>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#leetcode01-%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C">leetcode01 两数之和</a>
+<ul>
+<li><a href="#c%E4%B8%ADmap">c++中map</a></li>
+<li><a href="#c%E4%B8%ADvector">c++中vector</a></li>
+<li><a href="#hashmap%E4%BB%A3%E7%A0%81">hashmap代码</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://fnoi11bfsyue.github.io/post/hello-gridea/">
+              <h3 class="post-title">
+                Hello Gridea
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://fnoi11bfsyue.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://fnoi11bfsyue.github.io</id>
+    <title>Gridea</title>
+    <updated>2021-06-27T11:34:01.110Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://fnoi11bfsyue.github.io"/>
+    <link rel="self" href="https://fnoi11bfsyue.github.io/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://fnoi11bfsyue.github.io/images/avatar.png</logo>
+    <icon>https://fnoi11bfsyue.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2021, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[test]]></title>
+        <id>https://fnoi11bfsyue.github.io/post/test/</id>
+        <link href="https://fnoi11bfsyue.github.io/post/test/">
+        </link>
+        <updated>2021-06-27T11:08:03.000Z</updated>
+        <content type="html"><![CDATA[<p>这是一篇测试</p>
+<h1 id="leetcode01-两数之和">leetcode01 两数之和</h1>
+<p><a href="https://leetcode-cn.com/problems/two-sum/">题目描述</a></p>
+<h2 id="c中map">c++中map</h2>
+<p><a href="https://www.cnblogs.com/fnlingnzb-learner/p/5833051.html">C++中的STL中map用法 12.基本操作函数</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">映射</th>
+<th style="text-align:left">底层实现</th>
+<th style="text-align:left">是否有序</th>
+<th style="text-align:left">数值是否可以重复</th>
+<th style="text-align:left">能否更改数值</th>
+<th style="text-align:left">查询效率</th>
+<th style="text-align:left">增删效率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">std::map</td>
+<td style="text-align:left">红黑树</td>
+<td style="text-align:left">key有序</td>
+<td style="text-align:left">key不可重复</td>
+<td style="text-align:left">key不可修改</td>
+<td style="text-align:left">O(logn)</td>
+<td style="text-align:left">O(logn)</td>
+</tr>
+<tr>
+<td style="text-align:left">std::multimap</td>
+<td style="text-align:left">红黑树</td>
+<td style="text-align:left">key有序</td>
+<td style="text-align:left">key可重复</td>
+<td style="text-align:left">key不可修改</td>
+<td style="text-align:left">O(logn)</td>
+<td style="text-align:left">O(logn)</td>
+</tr>
+<tr>
+<td style="text-align:left">std::unordered_map</td>
+<td style="text-align:left">哈希表</td>
+<td style="text-align:left">key无序</td>
+<td style="text-align:left">key不可重复</td>
+<td style="text-align:left">key不可修改</td>
+<td style="text-align:left">O(1)</td>
+<td style="text-align:left">O(1)</td>
+</tr>
+</tbody>
+</table>
+<h2 id="c中vector">c++中vector</h2>
+<p><a href="vector%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95">vector的使用方法</a></p>
+<h2 id="hashmap代码">hashmap代码</h2>
+<pre><code class="language-c++">class Solution {
+public:
+    vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) {
+        vector&lt;int&gt; answer;
+        map&lt;int,int&gt; hash;
+        for(int i=0; i&lt;nums.size(); ++i)hash[nums[i]]=i;//添加maphash.value
+        for(int i=0; i&lt;nums.size(); ++i){
+            //if((hash.count(target-nums[i]))!=0 &amp;&amp; (nums[i]*2!=target))//input[3,3] 6, output[0,1]
+            if((hash.count(target-nums[i]))!=0 &amp;&amp; (i!=hash[target-nums[i]])){//count查找maphash.key是否存在，存在返回1，否则返回0
+                answer.push_back(i);//vector后加一个元素
+                answer.push_back(hash[target-nums[i]]);
+                break;
+            }
+        }
+        return answer;
+    }
+};
+</code></pre>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Hello Gridea]]></title>
+        <id>https://fnoi11bfsyue.github.io/post/hello-gridea/</id>
+        <link href="https://fnoi11bfsyue.github.io/post/hello-gridea/">
+        </link>
+        <updated>2018-12-11T16:00:00.000Z</updated>
+        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
+✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
+<!-- more -->
+<p><a href="https://github.com/getgridea/gridea">Github</a><br>
+<a href="https://gridea.dev/">Gridea 主页</a><br>
+<a href="http://fehey.com/">示例网站</a></p>
+<h2 id="特性">特性👇</h2>
+<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
+<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
+<p>🏷️  你可以对文章进行标签分组</p>
+<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
+<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
+<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
+<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
+<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
+<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
+<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
+<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
+<p>未来，它一定会成为你离不开的伙伴</p>
+<p>尽情发挥你的才华吧！</p>
+<p>😘 Enjoy~</p>
+]]></content>
+    </entry>
+</feed>
