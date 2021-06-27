@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>leetcode01 | Shirley Fan</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://fnoi11bfsyue.github.io/favicon.ico?v=1624797350293">
+<link rel="stylesheet" href="https://fnoi11bfsyue.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="字数: 176，预计阅读时间: 1min
+
+leetcode01 两数之和
+题目描述
+
+c++中map
+C++中的STL中map用法 12.基本操作函数
+
+
+
+映射
+底层实现
+是否有序
+数值是否可以重复
+能否更改数值
+查询效率
+增删效率
+
+..." />
+    <meta name="keywords" content="leetcode" />
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://fnoi11bfsyue.github.io">
+        <img src="https://fnoi11bfsyue.github.io/images/avatar.png?v=1624797350293" class="site-logo">
+        <h1 class="site-title">Shirley Fan</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Shirley's diary
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://fnoi11bfsyue.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">leetcode01</h2>
+            <div class="post-date">2021-06-27</div>
+            
+              <div class="feature-container" style="background-image: url('https://img0.baidu.com/it/u=744222831,3077239710&amp;fm=26&amp;fmt=auto&amp;gp=0.jpg')">
+              </div>
+            
+            <div class="post-content" v-pre>
+              <p>字数: 176，预计阅读时间: 1min<br>
+<br></p>
+<h1 id="leetcode01-两数之和">leetcode01 两数之和</h1>
+<p><a href="https://leetcode-cn.com/problems/two-sum/">题目描述</a><br>
+<br></p>
+<h2 id="c中map">c++中map</h2>
+<p><a href="https://www.cnblogs.com/fnlingnzb-learner/p/5833051.html">C++中的STL中map用法 12.基本操作函数</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">映射</th>
+<th style="text-align:left">底层实现</th>
+<th style="text-align:left">是否有序</th>
+<th style="text-align:left">数值是否可以重复</th>
+<th style="text-align:left">能否更改数值</th>
+<th style="text-align:left">查询效率</th>
+<th style="text-align:left">增删效率</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">std::map</td>
+<td style="text-align:left">红黑树</td>
+<td style="text-align:left">key有序</td>
+<td style="text-align:left">key不可重复</td>
+<td style="text-align:left">key不可修改</td>
+<td style="text-align:left">O(logn)</td>
+<td style="text-align:left">O(logn)</td>
+</tr>
+<tr>
+<td style="text-align:left">std::multimap</td>
+<td style="text-align:left">红黑树</td>
+<td style="text-align:left">key有序</td>
+<td style="text-align:left">key可重复</td>
+<td style="text-align:left">key不可修改</td>
+<td style="text-align:left">O(logn)</td>
+<td style="text-align:left">O(logn)</td>
+</tr>
+<tr>
+<td style="text-align:left">std::unordered_map</td>
+<td style="text-align:left">哈希表</td>
+<td style="text-align:left">key无序</td>
+<td style="text-align:left">key不可重复</td>
+<td style="text-align:left">key不可修改</td>
+<td style="text-align:left">O(1)</td>
+<td style="text-align:left">O(1)</td>
+</tr>
+</tbody>
+</table>
+<br>
+<h2 id="c中vector">c++中vector</h2>
+<p><a href="vector%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95">vector的使用方法</a><br>
+<br></p>
+<h2 id="hashmap代码">hashmap代码</h2>
+<pre><code class="language-c++">class Solution {
+public:
+    vector&lt;int&gt; twoSum(vector&lt;int&gt;&amp; nums, int target) {
+        vector&lt;int&gt; answer;
+        map&lt;int,int&gt; hash;
+        for(int i=0; i&lt;nums.size(); ++i)hash[nums[i]]=i;//添加maphash.value
+        for(int i=0; i&lt;nums.size(); ++i){
+            //if((hash.count(target-nums[i]))!=0 &amp;&amp; (nums[i]*2!=target))//input[3,3] 6, output[0,1]
+            if((hash.count(target-nums[i]))!=0 &amp;&amp; (i!=hash[target-nums[i]])){//count查找maphash.key是否存在，存在返回1，否则返回0
+                answer.push_back(i);//vector后加一个元素
+                answer.push_back(hash[target-nums[i]]);
+                break;
+            }
+        }
+        return answer;
+    }
+};
+</code></pre>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://fnoi11bfsyue.github.io/tag/nfa28iOyJ/" class="tag">
+                    leetcode
+                  </a>
+                
+              </div>
+            
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+
+
+  </body>
+</html>
