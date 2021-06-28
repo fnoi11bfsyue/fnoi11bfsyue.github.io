@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+<link rel="stylesheet" type="text/css" href="https://fnoi11bfsyue.github.io/highlight/styles/github-dark.css">
+    <script src="https://fnoi11bfsyue.github.io/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <meta charset="utf-8" >
+
+<title>不要“脸”的论文 | Shirley Fan</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://fnoi11bfsyue.github.io/favicon.ico?v=1624897120828">
+<link rel="stylesheet" href="https://fnoi11bfsyue.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="skin detection method
+Face Beautification and Color Enhancement with Scene Mode Detection
+原文链接
+detect human faces
+Lienha..." />
+    <meta name="keywords" content="" />
+  </head>
+
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://fnoi11bfsyue.github.io">
+        <img src="https://fnoi11bfsyue.github.io/images/avatar.png?v=1624897120828" class="site-logo">
+        <h1 class="site-title">Shirley Fan</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/fnoi11bfsyue" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Shirley's diary
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/fnoi11bfsyue" target="_blank">Shirley</a> | <a class="rss" href="https://fnoi11bfsyue.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">不要“脸”的论文</h2>
+            <div class="post-date">2021-06-28</div>
+            
+            <div class="post-content" v-pre>
+              <p>skin detection method</p>
+<h2 id="face-beautification-and-color-enhancement-with-scene-mode-detection">Face Beautification and Color Enhancement with Scene Mode Detection</h2>
+<p><a href="https://www.csie.ntu.edu.tw/~fuh/personal/FaceBeautificationandColorEnhancement.A2-1-0040.pdf">原文链接</a><br>
+detect human faces<br>
+Lienhart's frontal face classifier</p>
+<pre><code>    Inspired by S. Bae [3], we separate an image into base layer and detail 
+layer by using bilateral filter [].
+我们通常把图像分成许多层。我们的增强方法的目标是在不失去和谐的情况下提高图像质量。
+受S. Bae[3]的启发，我们使用双边滤波器将图像分为基层和细节层[]。
+    
+    The following equation (5) and (6) define the meanings of layers, where
+ presents the result after Image processed bilateral filter, and presents
+ fast bilateral filter algorithm [], presents the result of subtraction
+ between Image and Base.
+ 式(5)、式(6)定义了层的含义，其中为Image经过双边滤波处理后的结果，
+ 为快速双边滤波算法[]，为Image与Base相减的结果
+</code></pre>
+<p><img src="https://fnoi11bfsyue.github.io/post-images/1624894630285.png" alt="" loading="lazy"><br>
+双边滤波：这个算法是由一个高斯分量+梯度分量组成权重信息来实现模糊平滑图像的同时，保留边缘的功能的<br>
+<a href="https://blog.csdn.net/Trent1985/article/details/50496969">双边滤波示意图及其来源</a><br>
+<img src="https://fnoi11bfsyue.github.io/post-images/1624896856021.png" alt="" loading="lazy"><br>
+</br></p>
+<pre><code> Generating Skin Map:
+ After setting the positions of human faces, we have to
+select and modify possible skin pixels.
+ The pseudo code of generating Skin Map is in Figure 5.
+where Sobel is the function of applying Sobel filter on
+face in x and y directions; face is the facial region of
+luminance; sobel_x and sobel_y are the results after the
+face applied Sobel filter in x-direction and y-direction;
+th_x and th_y are the thresholds of smooth pixels; and
+skin_map records the result of our skin detection method.
+In our thesis, we set th_x = th_y = 15.0 by default. Figure
+6. is the result after our skin detection method.  
+
+在设置人脸的位置后，我们必须选择和修改可能的皮肤像素。
+生成Skin Map的伪代码如图5所示。
+其中Sobel是在人脸x、y方向上应用Sobel滤波器的函数;
+面部是面部亮度区域;sobel_x和sobel_y是人脸在x方向和
+y方向应用Sobel滤波器后的结果;Th_x、th_y为平滑像素的阈值;
+skin_map记录了我们的皮肤检测方法的结果。
+在我们的论文中，我们默认设置th_x = th_y = 15.0。数字
+6. 是我们皮肤检测后的结果
+</code></pre>
+<p><img src="https://fnoi11bfsyue.github.io/post-images/1624896079631.png" alt="" loading="lazy"><br>
+<img src="https://fnoi11bfsyue.github.io/post-images/1624896159477.png" alt="" loading="lazy"></p>
+<h2 id="luminance-adapted-skin-color-modeling-for-the-robust-detection-of-skin-areas">Luminance adapted skin color modeling for the robust detection of skin areas</h2>
+<p><a href="https://ieeexplore.ieee.org/document/6738540">原文链接</a></p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://fnoi11bfsyue.github.io/post/gridea-code-highlight/">
+                  <h3 class="post-title">
+                    gridea code-highlight
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>
