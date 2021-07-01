@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+
+<link rel="stylesheet" type="text/css" href="https://fnoi11bfsyue.github.io/highlight/styles/github-dark.css">
+    <script src="https://fnoi11bfsyue.github.io/highlight/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <meta charset="utf-8" >
+
+<title>git | Shirley Fan</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://fnoi11bfsyue.github.io/favicon.ico?v=1625158313473">
+<link rel="stylesheet" href="https://fnoi11bfsyue.github.io/styles/main.css">
+
+
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+    <meta name="description" content="预览
+
+stage(暂存区)
+remote(远程仓库)
+基本操作
+新建仓库
+克隆远程仓库到本地仓库
+git clone git@github.com:fnoi11bfsyue/test.git
+
+cd test
+
+查看状态，显示变更文件
+g..." />
+    <meta name="keywords" content="" />
+  </head>
+
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://fnoi11bfsyue.github.io">
+        <img src="https://fnoi11bfsyue.github.io/images/avatar.png?v=1625158313473" class="site-logo">
+        <h1 class="site-title">Shirley Fan</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/fnoi11bfsyue" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      Shirley's diary
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/fnoi11bfsyue" target="_blank">Shirley</a> | <a class="rss" href="https://fnoi11bfsyue.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">git</h2>
+            <div class="post-date">2021-07-01</div>
+            
+            <div class="post-content" v-pre>
+              <h2 id="预览">预览</h2>
+<p><img src="https://fnoi11bfsyue.github.io/post-images/1625123893874.png" alt="" loading="lazy"><br>
+stage(暂存区)<br>
+remote(远程仓库)</p>
+<h1 id="基本操作">基本操作</h1>
+<h2 id="新建仓库">新建仓库</h2>
+<h2 id="克隆远程仓库到本地仓库">克隆远程仓库到本地仓库</h2>
+<pre><code>git clone git@github.com:fnoi11bfsyue/test.git
+
+cd test
+</code></pre>
+<h2 id="查看状态显示变更文件">查看状态，显示变更文件</h2>
+<pre><code>git status 或者 git status -s   哪些更新尚未暂存，哪些更新已暂存并准备好下次提交
+git diff    尚未暂存的文件更新了哪些细节
+</code></pre>
+<p>git文件四种状态<br>
+<img src="https://fnoi11bfsyue.github.io/post-images/1625129580330.png" alt="" loading="lazy"></p>
+<ol>
+<li>untracked files.未跟踪文件（本地未加到暂存区的文件）</li>
+<li>nothing to commit, working directory clean.没什么可提交的，工作目录干净（在最近一次提交后没有做任何改动）</li>
+<li>changes not staged for commit.未为提交而暂存的更改。</li>
+<li>change to be commited.更改要提交</li>
+</ol>
+<h2 id="添加文件到暂存区">添加文件到暂存区</h2>
+<pre><code>提交变化到暂存区
+git add FaceBeautificationandColorEnhancement.A2-1-0040.pdf
+git add -A     提交所有变化
+git add -u     提交被修改modified的文件和被删除deleted的文件，不包括新文件new
+</code></pre>
+<h2 id="提交暂存区到本地仓库">提交暂存区到本地仓库</h2>
+<pre><code>git commit  若没加任何路径，把要提交的文件前#去掉
+esc :wq 或者 esc:q  返回上一层!
+
+git commit -a   可以省区add，只对删除和修改文件有效
+
+git commit -m &quot;备注&quot;
+</code></pre>
+<h2 id="从暂存区移除文件">从暂存区移除文件</h2>
+<pre><code>git rm  FaceBeautificationandColorEnhancement.A2-1-0040.pdf
+</code></pre>
+<h2 id="回退版本">回退版本</h2>
+<pre><code>get reset HEAD  --mixed 为默认，可以不用带该参数，用于重置暂存区的文件与上一次的提交
+git reset HEAD^ hello.php  # 回退 hello.php 文件的版本到上一个版本 
+HEAD~0 表示当前版本
+HEAD~1 上一个版本
+HEAD^2 上上一个版本
+HEAD^3 上上上一个版本
+
+git reset --hard HEAD   --hard 参数撤销工作区中所有未提交的修改内容，将暂存区与工作区都回到上一次版本，并删除之前的所有信息提交
+（先对文件reset然后commit -m '修改'，无法提交成功，需要用 commit -am '修改文件'，原因执行 git reset HEAD 以取消之前 git add 添加）
+
+
+(commit)保持一致，工作区文件内容保持不变
+git commit --amend      重新提交，第二次提交将代替第一次提交的结果
+
+？取消暂存的文件
+？撤销对文件的修改
+</code></pre>
+<h2 id="移动或重命名">移动或重命名</h2>
+<p>(学习网址)[https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E8%AE%B0%E5%BD%95%E6%AF%8F%E6%AC%A1%E6%9B%B4%E6%96%B0%E5%88%B0%E4%BB%93%E5%BA%93]</p>
+<h2 id="提交历史">提交历史</h2>
+<pre><code>git log     查看历史commit提交记录
+</code></pre>
+<h1 id="远程操作">远程操作</h1>
+<figure data-type="image" tabindex="1"><img src="https://fnoi11bfsyue.github.io/post-images/1625153891277.png" alt="" loading="lazy"></figure>
+<h2 id="远程仓库操作">远程仓库操作</h2>
+<pre><code>git remote -v   显示所有远程仓库
+
+# 提交到 Github
+$ git remote add origin git@github.com:tianqixin/runoob-git-test.git        #添加远程版本库git remote add [shortname] [url]
+$ git push -u origin master
+git remote rm name  # 删除远程仓库
+git remote rename old_name new_name  # 修改仓库名
+</code></pre>
+<h2 id="远程获取代码库">远程获取代码库</h2>
+<pre><code>git fetch
+</code></pre>
+<h2 id="下载远程代码并合并">下载远程代码并合并</h2>
+<p>git pull 其实就是 git fetch 和 git merge FETCH_HEAD 的简写</p>
+<pre><code>git pull
+git pull origin master:brantest     将远程主机 origin 的 master 分支拉取过来，与本地的 brantest 分支合并。
+git pull origin master      如果远程分支是与当前分支合并，则冒号后面的部分可以省略。
+</code></pre>
+<h2 id="上传远程代码并合并">上传远程代码并合并</h2>
+<p>push会记录之前暂存区提交到本地仓库的时间，从GitHub可查</p>
+<pre><code>git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;
+git push &lt;远程主机名&gt; &lt;本地分支名&gt;
+git push origin master  #相当于git push origin master:master
+
+git push origin --delete master     删除 origin 主机的 master 分支
+</code></pre>
+<pre><code>#添加README.md文件并提交
+
+$ mkdir runoob-git-test                     # 创建测试目录
+$ cd runoob-git-test/                       # 进入测试目录
+$ echo &quot;# 菜鸟教程 Git 测试&quot; &gt;&gt; README.md     # 创建 README.md 文件并写入内容
+$ ls                                        # 查看目录下的文件
+README
+$ git init                                  # 初始化
+$ git add README.md                         # 添加文件
+$ git commit -m &quot;添加 README.md 文件&quot;        # 提交并备注信息
+[master (root-commit) 0205aab] 添加 README.md 文件
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.md
+
+# 提交到 Github
+$ git remote add origin git@github.com:tianqixin/runoob-git-test.git
+$ git push -u origin master
+</code></pre>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://fnoi11bfsyue.github.io/post/tableau/">
+                  <h3 class="post-title">
+                    tableau
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script type="application/javascript">
+
+AOS.init();
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+  <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad()
+  </script>
+
+
+
+
+
+  </body>
+</html>
