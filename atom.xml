@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fnoi11bfsyue.github.io</id>
     <title>Shirley Fan</title>
-    <updated>2021-07-01T16:51:59.236Z</updated>
+    <updated>2021-07-06T09:19:46.773Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fnoi11bfsyue.github.io"/>
     <link rel="self" href="https://fnoi11bfsyue.github.io/atom.xml"/>
@@ -27,6 +27,7 @@ remote(远程仓库)</p>
 
 cd test
 </code></pre>
+<figure data-type="image" tabindex="1"><img src="file://D:/%E5%85%B6%E4%BB%96%E8%BD%AF%E4%BB%B6/gridea/%E5%9B%BE%E7%89%87/github-ssh.png" alt="" loading="lazy"></figure>
 <h2 id="查看状态显示变更文件">查看状态，显示变更文件</h2>
 <pre><code>git status 或者 git status -s   哪些更新尚未暂存，哪些更新已暂存并准备好下次提交
 git diff    尚未暂存的文件更新了哪些细节
@@ -79,8 +80,11 @@ git commit --amend      重新提交，第二次提交将代替第一次提交�
 <h2 id="提交历史">提交历史</h2>
 <pre><code>git log     查看历史commit提交记录
 </code></pre>
+<h2 id="查看本地仓库当前目录下文件">查看本地仓库当前目录下文件</h2>
+<pre><code>ls
+</code></pre>
 <h1 id="远程操作">远程操作</h1>
-<figure data-type="image" tabindex="1"><img src="https://fnoi11bfsyue.github.io/post-images/1625153891277.png" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://fnoi11bfsyue.github.io/post-images/1625153891277.png" alt="" loading="lazy"></figure>
 <h2 id="远程仓库操作">远程仓库操作</h2>
 <pre><code>git remote -v   显示所有远程仓库
 
@@ -100,13 +104,15 @@ git pull origin master:brantest     将远程主机 origin 的 master 分支拉�
 git pull origin master      如果远程分支是与当前分支合并，则冒号后面的部分可以省略。
 </code></pre>
 <h2 id="上传远程代码并合并">上传远程代码并合并</h2>
-<p>push会记录之前暂存区提交到本地仓库的时间，从GitHub可查</p>
+<p>push：add——commit——push<br>
+push会记录之前暂存区提交到本地仓库的时间，从GitHub可查</p>
 <pre><code>git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt;
 git push &lt;远程主机名&gt; &lt;本地分支名&gt;
 git push origin master  #相当于git push origin master:master
 
 git push origin --delete master     删除 origin 主机的 master 分支
 </code></pre>
+<figure data-type="image" tabindex="3"><img src="https://fnoi11bfsyue.github.io/post-images/1625562851189.png" alt="" loading="lazy"></figure>
 <pre><code>#添加README.md文件并提交
 
 $ mkdir runoob-git-test                     # 创建测试目录
@@ -125,6 +131,7 @@ $ git commit -m &quot;添加 README.md 文件&quot;        # 提交并备注信�
 $ git remote add origin git@github.com:tianqixin/runoob-git-test.git
 $ git push -u origin master
 </code></pre>
+<h3 id="tab自动补全">TAB自动补全</h3>
 ]]></content>
     </entry>
     <entry>
