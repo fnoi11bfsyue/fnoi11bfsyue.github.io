@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://fnoi11bfsyue.github.io</id>
     <title>Shirley Fan</title>
-    <updated>2021-07-26T09:00:23.128Z</updated>
+    <updated>2021-07-28T10:37:51.049Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://fnoi11bfsyue.github.io"/>
     <link rel="self" href="https://fnoi11bfsyue.github.io/atom.xml"/>
@@ -19,7 +19,7 @@
         <content type="html"><![CDATA[<h1 id="人工智能的发展与创新技术-王宇新">人工智能的发展与创新技术 ——王宇新</h1>
 <p>ibm watson系统：是认知计算系统的杰出代表，也是一个技术平台。认知计算代表一种全新的计算模式，它包含信息分析，自然语言处理和机器学习领域的大量技术创新，能够助力决策者从大量非结构化数据中揭示非凡的洞察。</p>
 <h2 id="人工智能">人工智能</h2>
-<p>which：弱，通用，强（我超强的！）<br>
+<p>which：弱（执行某些特定工作），通用，强（我超强的！）<br>
 roadmap：</p>
 <table>
 <thead>
@@ -51,8 +51,11 @@ roadmap：</p>
 <h2 id="keyword">keyword</h2>
 <p>AI&gt;ML&gt;ANN&gt;DL<br>
 核心思想：让计算机程序随着数据样本积累自动获得精确的判断和归纳能力<br>
-过程：training set -&gt; learning（!特征工程） -&gt; mode -&gt; 预测<br>
+过程：training set -&gt; learning（!特征工程） -&gt; mode -&gt; 预测</p>
+<blockquote>
+<p>总结过去、预测未来<br>
 基本概念：feature、label、learning（mapping：特征与标签的映射关系），classification、regression（回归：连续值的预测）、clustering</p>
+</blockquote>
 <h3 id="监督学习无监督学习-半监督学习">监督学习，无监督学习、半监督学习</h3>
 <table>
 <thead>
@@ -82,7 +85,7 @@ roadmap：</p>
 <h1 id="ibm-未来已来">IBM 未来已来</h1>
 <p>产业融合，技术分割 -&gt;自动化<br>
 第四次工业革命：人工智能、区块链、云计算、物联网、量子计算、纳米技术、环境科学、空间科学、基因技术，众多领域的一个方向</p>
-<h1 id="人工智能的基本发展方向徐啸天">人工智能的基本发展方向——徐啸天</h1>
+<h1 id="人工智能的基本发展方向-徐啸天">人工智能的基本发展方向 ——徐啸天</h1>
 <h2 id="人工智能的应用参考案例">人工智能的应用参考案例</h2>
 <p>1.from airport to AIrport -视觉（准确度更高）<br>
 passenger sercices\safty\asset management\compliance\operation...<br>
@@ -170,6 +173,163 @@ TPU：为了深度学习所设计的，支持半精度和单精度的浮点运�
 </tbody>
 </table>
 <p>ONNX is an open-source standard for neural network models.</p>
+<h3 id="落地">落地</h3>
+<p>题外话：代码是确定性好还是不确定性好？DL加入了不确定性，中间结果不去控制模拟自然界学习的途径。<br>
+通过观测现象维护机场运营</p>
+<br/>
+<h1 id="机器学习和深度学习概览与开发实践概览-杜可">机器学习和深度学习概览与开发实践概览 ——杜可</h1>
+<h3 id="人工智能及其发展">人工智能及其发展</h3>
+<p>AI替代人工标准计算配比、捕捉图像传送至watson进行系统分析<br>
+what：智商、情商、财商、逆商、爱商<br>
+ven  机器学习、大数据、数据挖掘<br>
+<img src="https://fnoi11bfsyue.github.io/post-images/1627347318418.png" alt="" loading="lazy"><br>
+数据集、特征提取label、学习模型、预测<br>
+数据面临的挑战：数据从哪里来、如何将多个数据源组合在一起，并能任意修建、如何保证数据质量、可靠性与筛选——解决：数据清理优化预处理<br>
+机器学习算法的分类：监督、无监督、半监督、强化学习<br>
+强化学习：alpha-go有一定局限性适合棋盘学习，不需要数据的输入，但不适用于声音和图像的识别<br>
+<s>不需要数据</s><br>
+<br/></p>
+<h3 id="机器学习概念应用">机器学习概念应用</h3>
+<h4 id="模型的分类">模型的分类</h4>
+<p>判别模型discriminative（one-sept）按照记忆  ：朴素贝叶斯<br>
+生成模型generative（two-sept）直接比对 ：k-means</p>
+<h6 id="线性回归">线性回归</h6>
+<blockquote>
+<p>输入向量[x1,x2,x3...] -&gt; y=a1x1+a2x2+a3x3+... -&gt;得到y<br>
+损失函数（越小越好）、梯度下降（步长、学习率）、收敛曲线、预测曲线<br>
+过拟合（解决加入参数使得拟合结果变小）、欠拟合 —模型的泛化能力</p>
+</blockquote>
+<h6 id="逻辑回归">逻辑回归</h6>
+<blockquote>
+<p>输入向量[x1,x2,x3...] -&gt; y=a1x1+a2x2+a3x3+... -&gt;得到y是[0,1]之间的概率<br>
+激活函数sigmoid，损失函数..</p>
+</blockquote>
+<h6 id="朴素贝叶斯-贝叶斯分类器bayes-classifier">朴素贝叶斯 —贝叶斯分类器bayes classifier</h6>
+<blockquote>
+<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>P</mi><mo>(</mo><mi>A</mi><mi mathvariant="normal">∣</mi><mi>B</mi><mo>)</mo><mo>=</mo><mfrac><mrow><mi>P</mi><mo>(</mo><mi>A</mi><mo>)</mo><mo>∗</mo><mi>P</mi><mo>(</mo><mi>B</mi><mi mathvariant="normal">∣</mi><mi>A</mi><mo>)</mo></mrow><mrow><mi>P</mi><mo>(</mo><mi>B</mi><mo>)</mo></mrow></mfrac></mrow><annotation encoding="application/x-tex">P(A|B) = \dfrac{P(A)*P(B|A)}{P(B)} 
+</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault">A</span><span class="mord">∣</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:2.363em;vertical-align:-0.936em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.427em;"><span style="top:-2.314em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mclose">)</span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.677em;"><span class="pstrut" style="height:3em;"></span><span class="mord"><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault">A</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord mathdefault" style="margin-right:0.13889em;">P</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.05017em;">B</span><span class="mord">∣</span><span class="mord mathdefault">A</span><span class="mclose">)</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.936em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></span></p>
+<p>通过已知的事情该路和反向事件概率来进行预测<br>
+早晨有云，去爬山会下雨吗？ -&gt; 反向：下雨天早上多云吗？<br>
+文本的应用：情感分类、文章审核、垃圾邮件分类<br>
+####### 决策树<br>
+分歧终端机 -纯度和信息熵成反比</p>
+</blockquote>
+<h6 id="随机森林">随机森林</h6>
+<blockquote>
+<p>并行 三个臭皮匠顶个诸葛亮<br>
+####### knn、kmeans<br>
+如何选择<br>
+奥卡姆剃刀原理：简单就是好的<br>
+没有免费午餐原则：没有最好只有更适合<br>
+<br/><br>
+机器学习学习的挑战<br>
+如何选择和调试模型<br>
+如何确定最优模型、最佳特征和参数<br>
+如何让应用程序使用我创建好的模型<br>
+模型能符合道德法规要求不出现偏见吗<br>
+模型安全性<br>
+如何通过模型决策概率决策的依据<br>
+<br/></p>
+</blockquote>
+<h3 id="深度学习应用">深度学习应用</h3>
+<p>深度学习：基于神经网络的机器学习算法，神经网络含有多个隐藏层。<br>
+输入层 -&gt; 隐藏层 -&gt; 输出层<br>
+底层网络-&gt;高层特征（神经网络：特征）<br>
+激活函数-&gt;轴突<br>
+GAN生成对抗网络<br>
+计算机视觉、自然语言处理、语音识别...</p>
+<p>神经网络分类：一般、卷积、递归、生成对抗<br>
+tensorflow<br>
+CNN只关心关注的地方：通过卷积核关注关注的地方，层层卷积传递提取特征<br>
+提取、池化<br>
+过拟合的解决：扩充数据集、随机丢弃<br>
+RNN在训练过程中的循环<br>
+长期依赖问题<br>
+长短期记忆网络LSTM<br>
+词的嵌入，将词压缩到向量空间</p>
+<h3 id="ibm-cloud-ai开发实践">IBM CLOUD AI开发实践</h3>
+<p>vedio-4*deom</p>
+<h1 id="自然语言处理nlp-高山">自然语言处理NLP ——高山</h1>
+<h6 id="自然语言是大脑抽象出来的东西图片是较为客观的">自然语言是大脑抽象出来的东西，图片是较为客观的。</h6>
+<blockquote>
+<p>再见：表示礼貌、我不想再见到你了。<br>
+自然语言是冰山浮出水面的东西，领域知识是冰山下面看不到的部分，合成“语义空间”。<br>
+难点：现有AI系统很难把“语义空间”全面准确的表达。<br>
+吃食堂和吃面条不同。<br>
+我写的程序更抽象，每一行代码机器都懂，连在一起就不知道代码在说什么。</p>
+</blockquote>
+<h6 id="自然语言处理的几种应用处理的应用更广泛">自然语言处理的几种应用（处理的应用更广泛）</h6>
+<p>分类（文本分类、情感分析），匹配（搜索、问答、单论对话Siri），翻译（如机器翻译、语音识别），结构化预测（实体识别、分词、词性标注、语义分析），序列决策（多轮对话）<br>
+应用：多国语音翻译系统</p>
+<blockquote>
+<p>语音 -&gt; 语音识别 -&gt; 机器翻译 -&gt; 文语转换 -&gt; 语音<br>
+语音识别<br>
+声学模型（AM）-HMM（隐马尔可夫，现在用DL替代），GMM（说话验证）,DNN（深度神经网络）<br>
+语言模型  (LM） - 多音字搭配<br>
+端到端的识别（input-output）<br>
+文语转换（TTS，text-to-spake）<br>
+拼接合成，参数合成（microsoft）<br>
+韵律模型（NLP，需要知道词性和轻重音）</p>
+</blockquote>
+<h6 id="n-gram-n元文法问题">N-gram N元文法问题</h6>
+<p>第n个词的出现只与前面n-1歌词相关，而与其他词不相关，整句的概率就是n个词出现概率的乘积<br>
+中文分词</p>
+<blockquote>
+<p>根据上下文语义 张也来了-张 也来了/张也是一个人<br>
+人名地名识别（对姓和名进行统计，然后用n-gram判别）<br>
+专用名词识别</p>
+</blockquote>
+<h6 id="tf-idf">TF-IDF</h6>
+<p>TF 一个词在文中出现的次数<br>
+IDF 逆文档频率，对每个词分配一个重要性的权重。较常见的词给予较小的权重，较少见的词给予较大的权重。<br>
+没有考虑词间关系！TF-IDE=TF*IDE</p>
+<h6 id="one-hot词向量">ONE-HOT词向量</h6>
+<p>每一个词都由一个单独的向量表示</p>
+<h6 id="distributed词向量">distributed词向量</h6>
+<p>用多维属性表示不同的词word embedding</p>
+<h6 id="word2vec">word2vec</h6>
+<p>cbow模型<br>
+skip-gram模型——无监督学习<br>
+在给定中心词的条件下，预测上下文词，使输出词为上下文的概率最大。<br>
+解决：设定我们的窗口大小为2，也就是说我们仅选输入词前后各两个词和输入词进行组合。计算两个词的词向量，正向样本内积越大，两个词越相关；负向样本内积越小，两个词越相关。<br>
+u<em>v中心词</em>上下文</p>
+<h6 id="encoder-decoder编码-解码问题框架">encoder-decoder编码-解码问题框架</h6>
+<blockquote>
+<p>中间量C=F(x1,x2,..,xm)<br>
+Yi=g(C,y1,y2,...,yi-1)<br>
+transformer<br>
+<br/><br>
+attention<br>
+q<em>k中心词</em>上下文，自己*自己表示词在句子中的影响程度<br>
+<img src="https://fnoi11bfsyue.github.io/post-images/1627371974804.png" alt="" loading="lazy"></p>
+</blockquote>
+<br/>
+###### GPT
+输入一个词序列，输出该词序列的下一个词。
+###### Bert
+语义推理
+<h1 id=""></h1>
+<p>2b/2c：2c的容错率更高<br>
+IBM招聘公众号<br>
+2022年校招+实习生大连本地<br>
+大连：rmiaodl@cn.ibm.com<br>
+北京：huxiaoy@cn.ibm.com<br>
+系统开发：云计算、容器、微服务，k&amp;s，云原生/编译原理、llvm<br>
+软件测试：如何回归测试（加入a模块后整体如何不受影响）</p>
+<h1 id="ibm百年科技中的蓝色力量-glogia-chou财务运营">IBM百年科技中的蓝色力量 ——Glogia Chou，财务运营</h1>
+<p>学习经历：心理学<br>
+蓝色：思维缜密，红色：强执行力，黄色：领导力管理，绿色：和平友爱中坚力量<br>
+认清自己，科技企业以人为本<br>
+最大的资本是时间</p>
+<h6 id="程序员">程序员</h6>
+<blockquote>
+<p>6：00起床上班<br>
+技术培训、语言培训<br>
+应用开发工程师：行业知识的积累是开发工作的基础保障<br>
+快速响应，紧急对应</p>
+</blockquote>
+<h6 id="大连软交会公众号">大连软交会公众号</h6>
+<h1 id="设计思维实践-李易">设计思维实践 ——李易</h1>
 ]]></content>
     </entry>
     <entry>
